@@ -1,0 +1,6 @@
+Click
+requests
+urllib3
+chardet
+docker
+sphinx
