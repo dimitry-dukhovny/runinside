@@ -26,6 +26,3 @@ Commandline switches
     -c, --container TEXT    Target container by name or ID.  [required]
     --help                  Show this message and exit.
 ..
-
-
-

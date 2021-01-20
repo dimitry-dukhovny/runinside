@@ -1,0 +1,19 @@
+repos:
+-  repo: https://github.com/pre-commit/pre-commit-hooks
+   rev: v2.3.0
+   hooks:
+   - id: check-ast
+   - id: check-case-conflict
+   - id: check-yaml
+   - id: end-of-file-fixer
+   - id: trailing-whitespace
+-  repo: https://github.com/PyCQA/isort
+   rev: 5.7.0
+   hooks:
+   - id: isort
+     args: [--filter-files, --force-single-line-imports]
+     files: \.py$
+-  repo: https://github.com/psf/black
+   rev: 20.8b1
+   hooks:
+   - id: black

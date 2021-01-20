@@ -1,6 +1,23 @@
-Click
-requests
-urllib3
-chardet
-docker
-sphinx
+# These requirements are what is needed for installation and running
+# runinside.  It should be as minimal as possible and versioned
+# with >= as much as possible.
+
+# Command Line
+# ------------
+Click >= 7.1.2
+
+# Internet
+# --------
+requests >= 2.24.0
+urllib3 >= 1.25.11
+
+# Docker
+# ------
+docker >= 4.4.0
+chardet >= 3.0.4
+
+# Documentation
+# -------------
+Sphinx >= 3.2.1
+sphinx-rtd-theme >= 0.5.0
+sphinx-click >= 2.5.0

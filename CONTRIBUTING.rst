@@ -69,6 +69,7 @@ Ready to contribute? Here's how to set up `runinside` for local development.
     $ mkvirtualenv runinside
     $ cd runinside/
     $ python setup.py develop
+    $ pre-commit install
 
 4. Create a branch for local development::
 

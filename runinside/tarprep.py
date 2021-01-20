@@ -1,12 +1,14 @@
-import os
 import glob
+import os
 import tarfile
 import tempfile
+
 
 class tarball:
     """
     Manage tar balls accepting a manifest[] whose links we will resolve.
     """
+
     def __init__(self, manifest=[], VERBOSE=False):
         if VERBOSE:
             self.inputmanifest = manifest
@@ -23,13 +25,13 @@ class tarball:
         """
         while os.path.exists(self.tarname):
             self.nameset()
-        self.tarhandle = tarfile.open(self.tarname, mode='w')
+        self.tarhandle = tarfile.open(self.tarname, mode="w")
 
     def nameset(self):
         """
         Pick a name, any name, as long as it ends in '.tar'
         """
-        self.tarname = tempfile.mktemp(suffix='.tar')
+        self.tarname = tempfile.mktemp(suffix=".tar")
 
     def addcontent(self):
         """
@@ -37,6 +39,7 @@ class tarball:
         """
         list(map(lambda x: taradd(self.tarhandle, x), self.manifest))
         self.tarhandle.close()
+
 
 def taradd(tarhandle, item):
     """
@@ -51,12 +54,16 @@ def taradd(tarhandle, item):
         pass
     os.chdir(startdir)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import sys
+
     if len(sys.argv) > 1:
         manifest = sys.argv[1:]
     else:
-        manifest = ['*.py', '../tests', '/not/a/real/file.txt']
+        manifest = ["*.py", "../tests", "/not/a/real/file.txt"]
     t = tarball(manifest=manifest, VERBOSE=True)
-    print("%s described \n%s \n...and is in %s" % \
-        (t.inputmanifest, str(t.manifest), t.tarname))
+    print(
+        "%s described \n%s \n...and is in %s"
+        % (t.inputmanifest, str(t.manifest), t.tarname)
+    )
